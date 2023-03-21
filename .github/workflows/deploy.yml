@@ -60,7 +60,7 @@ jobs:
           ECR_REPOSITORY: reponame
           IMAGE_TAG: latest
         run: |
-           docker build -t ecs-demo:latest .
+          docker build -t ecs-demo:latest .
           docker tag ecs-demo:latest $ECR_REGISTRY/ecs-demo:$IMAGE_TAG
           docker push $ECR_REGISTRY/ecs-demo:$IMAGE_TAG
           echo "::set-output name=appimage::$ECR_REGISTRY/ecs-demo:$IMAGE_TAG"
